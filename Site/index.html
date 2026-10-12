@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRINI — Alta Confeitaria | Haute Pâtisserie</title>
+    <meta name="description" content="TRINI - Alta Confeitaria. Criamos experiências gastronômicas exclusivas para casamentos, celebrações e eventos de alto padrão.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-tc">TC</span>
+                <span class="logo-nome">TRINI</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="colecao.html">Coleção</a></li>
+                <li><a href="servicos.html">Serviços</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="contato.html" class="nav-cta">Solicitar Orçamento</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" onclick="toggleMenuSite()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <p class="hero-subtitulo">H A U T E   P Â T I S S E R I E</p>
+            <h1 class="hero-titulo">TRINI</h1>
+            <div class="hero-linha"></div>
+            <p class="hero-frase">Criamos experiências gastronômicas<br>para os momentos mais especiais da sua vida.</p>
+            <a href="contato.html" class="btn-hero">Solicitar Orçamento</a>
+        </div>
+        <div class="hero-scroll">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- SOBRE (RESUMO) -->
+    <section class="sobre-resumo">
+        <div class="container">
+            <p class="secao-tag">A Maison</p>
+            <h2 class="secao-titulo">A Arte da Alta Confeitaria</h2>
+            <div class="secao-linha"></div>
+            <p class="secao-texto">
+                Cada criação da Trini é uma obra única. Unimos técnica francesa, ingredientes nobres 
+                e um olhar artístico para transformar celebrações em memórias inesquecíveis.
+            </p>
+            <a href="sobre.html" class="btn-outline">Conheça Nossa História</a>
+        </div>
+    </section>
+
+    <!-- COLEÇÃO (VITRINE) -->
+    <section class="colecao-vitrine">
+        <div class="container">
+            <p class="secao-tag">A Coleção</p>
+            <h2 class="secao-titulo">Criações Assinadas</h2>
+            <div class="secao-linha"></div>
+            
+            <div class="vitrine-grid">
+                <div class="vitrine-card">
+                    <div class="vitrine-imagem placeholder-1">
+                        <i class="fas fa-birthday-cake"></i>
+                    </div>
+                    <h3>Bolos de Autor</h3>
+                    <p>Criações exclusivas para casamentos e celebrações.</p>
+                </div>
+                <div class="vitrine-card">
+                    <div class="vitrine-imagem placeholder-2">
+                        <i class="fas fa-candy-cane"></i>
+                    </div>
+                    <h3>Doces Finos</h3>
+                    <p>Miniaturas sofisticadas que encantam à primeira vista.</p>
+                </div>
+                <div class="vitrine-card">
+                    <div class="vitrine-imagem placeholder-3">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Kits Exclusivos</h3>
+                    <p>Combinações harmoniosas para grandes eventos.</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 4rem;">
+                <a href="colecao.html" class="btn-outline">Ver Coleção Completa</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section class="servicos-resumo">
+        <div class="container">
+            <p class="secao-tag">Os Serviços</p>
+            <h2 class="secao-titulo">Para Cada Celebração</h2>
+            <div class="secao-linha"></div>
+            
+            <div class="servicos-grid">
+                <div class="servico-card">
+                    <i class="fas fa-ring"></i>
+                    <h3>Casamentos</h3>
+                    <p>Do bolo principal aos doces finos, criamos a mesa dos sonhos.</p>
+                </div>
+                <div class="servico-card">
+                    <i class="fas fa-glass-cheers"></i>
+                    <h3>Celebrações Privadas</h3>
+                    <p>Aniversários, batizados e momentos íntimos com toque de luxo.</p>
+                </div>
+                <div class="servico-card">
+                    <i class="fas fa-building"></i>
+                    <h3>Eventos Corporativos</h3>
+                    <p>Presentes e experiências gastronômicas para sua marca.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-final">
+        <div class="container">
+            <h2 class="cta-titulo">Vamos Criar Algo Inesquecível?</h2>
+            <p class="cta-texto">Agende uma degustação privé e descubra o que a Trini pode fazer pelo seu evento.</p>
+            <a href="contato.html" class="btn-hero">Solicitar Orçamento</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4 class="footer-logo">TRINI</h4>
+                    <p class="footer-slogan">Haute Pâtisserie</p>
+                </div>
+                <div class="footer-col">
+                    <h5>Contato</h5>
+                    <p><i class="fab fa-whatsapp"></i> (13) 98102-2677</p>
+                    <p><i class="fab fa-whatsapp"></i> (11) 96827-5288</p>
+                    <p><i class="fas fa-envelope"></i> trinialtaconfeitaria@gmail.com</p>
+                </div>
+                <div class="footer-col">
+                    <h5>Social</h5>
+                    <p><i class="fab fa-instagram"></i> @trinialtaconfeitaria</p>
+                </div>
+                <div class="footer-col">
+                    <h5>Atelier</h5>
+                    <p>Rua Visconde de Parnaíba, 1156</p>
+                    <p>Brás — São Paulo / SP</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 TRINI - Alta Confeitaria. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/site.js"></script>
+</body>
+</html>

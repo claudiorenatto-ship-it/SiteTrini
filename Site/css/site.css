@@ -1,0 +1,608 @@
+/* ============================================
+   TRINI SITE — Estilos Oficiais
+   ============================================ */
+
+:root {
+    --onyx: #050505;
+    --dark-velvet: #0f0f0f;
+    --gold: #c5a059;
+    --gold-light: #e0c080;
+    --gold-glow: rgba(197, 160, 89, 0.15);
+    --ivory: #f5f0e6;
+    --muted: #888;
+    --border-subtle: rgba(197, 160, 89, 0.2);
+    --font-display: 'Cormorant Garamond', serif;
+    --font-body: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--onyx);
+    color: var(--ivory);
+    font-family: var(--font-body);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+    letter-spacing: 0.5px;
+}
+
+/* ============================================
+   NAVBAR
+   ============================================ */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1.5rem 2rem;
+    transition: all 0.4s ease;
+    background: transparent;
+}
+
+.navbar.scrolled {
+    background: rgba(5, 5, 5, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-tc {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    color: var(--gold);
+    letter-spacing: 2px;
+}
+
+.logo-nome {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    color: var(--gold);
+    letter-spacing: 6px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--ivory);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--gold);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--gold);
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.nav-cta {
+    padding: 0.7rem 1.5rem;
+    border: 1px solid var(--gold);
+    color: var(--gold) !important;
+    transition: all 0.3s;
+}
+
+.nav-cta:hover {
+    background: var(--gold);
+    color: var(--onyx) !important;
+}
+
+.nav-cta::after {
+    display: none;
+}
+
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: 1px solid var(--border-subtle);
+    color: var(--gold);
+    padding: 0.6rem 0.9rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+.hero {
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    background: radial-gradient(circle at center, #1a1a1a 0%, var(--onyx) 70%);
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(197, 160, 89, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(197, 160, 89, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(5, 5, 5, 0.3);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 2rem;
+    animation: fadeInUp 1.2s ease;
+}
+
+.hero-subtitulo {
+    font-size: 0.7rem;
+    letter-spacing: 8px;
+    color: var(--muted);
+    margin-bottom: 2rem;
+}
+
+.hero-titulo {
+    font-family: var(--font-display);
+    font-size: 6rem;
+    font-weight: 300;
+    color: var(--gold);
+    letter-spacing: 20px;
+    margin-bottom: 1rem;
+    line-height: 1;
+}
+
+.hero-linha {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 2rem auto;
+}
+
+.hero-frase {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--ivory);
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    line-height: 1.8;
+}
+
+.btn-hero {
+    display: inline-block;
+    padding: 1.2rem 3rem;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: var(--gold);
+    transition: left 0.4s ease;
+    z-index: -1;
+}
+
+.btn-hero:hover {
+    color: var(--onyx);
+}
+
+.btn-hero:hover::before {
+    left: 0;
+}
+
+.hero-scroll {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--gold);
+    font-size: 1.2rem;
+    animation: bounce 2s infinite;
+}
+
+/* ============================================
+   SEÇÕES GENÉRICAS
+   ============================================ */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+section {
+    padding: 8rem 0;
+}
+
+.secao-tag {
+    font-size: 0.65rem;
+    letter-spacing: 6px;
+    color: var(--gold);
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.secao-titulo {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--ivory);
+    text-align: center;
+    letter-spacing: 4px;
+    margin-bottom: 1.5rem;
+}
+
+.secao-linha {
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+    margin: 0 auto 2rem;
+}
+
+.secao-texto {
+    font-size: 1rem;
+    color: var(--muted);
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    line-height: 2;
+}
+
+.btn-outline {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: all 0.4s ease;
+}
+
+.btn-outline:hover {
+    background: var(--gold);
+    color: var(--onyx);
+}
+
+/* ============================================
+   VITRINE
+   ============================================ */
+.vitrine-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin-top: 4rem;
+}
+
+.vitrine-card {
+    text-align: center;
+    transition: transform 0.4s ease;
+}
+
+.vitrine-card:hover {
+    transform: translateY(-8px);
+}
+
+.vitrine-imagem {
+    aspect-ratio: 3/4;
+    background: linear-gradient(135deg, var(--dark-velvet) 0%, #1a1a1a 100%);
+    border: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    transition: border-color 0.4s;
+    position: relative;
+    overflow: hidden;
+}
+
+.vitrine-card:hover .vitrine-imagem {
+    border-color: var(--gold);
+}
+
+.vitrine-imagem i {
+    font-size: 3.5rem;
+    color: var(--gold);
+    opacity: 0.4;
+}
+
+.vitrine-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: var(--ivory);
+    letter-spacing: 3px;
+    margin-bottom: 0.8rem;
+}
+
+.vitrine-card p {
+    color: var(--muted);
+    font-size: 0.85rem;
+    line-height: 1.8;
+}
+
+/* ============================================
+   SERVIÇOS
+   ============================================ */
+.servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin-top: 4rem;
+}
+
+.servico-card {
+    text-align: center;
+    padding: 3rem 2rem;
+    border: 1px solid var(--border-subtle);
+    transition: all 0.4s ease;
+}
+
+.servico-card:hover {
+    border-color: var(--gold);
+    background: var(--gold-glow);
+}
+
+.servico-card i {
+    font-size: 2.5rem;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+}
+
+.servico-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--ivory);
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+}
+
+.servico-card p {
+    color: var(--muted);
+    font-size: 0.85rem;
+    line-height: 1.8;
+}
+
+/* ============================================
+   CTA FINAL
+   ============================================ */
+.cta-final {
+    background: var(--dark-velvet);
+    border-top: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
+    text-align: center;
+}
+
+.cta-titulo {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--gold);
+    letter-spacing: 4px;
+    margin-bottom: 1.5rem;
+}
+
+.cta-texto {
+    color: var(--muted);
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+    background: var(--onyx);
+    padding: 5rem 0 2rem;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.footer-logo {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--gold);
+    letter-spacing: 8px;
+    margin-bottom: 0.5rem;
+}
+
+.footer-slogan {
+    font-size: 0.6rem;
+    letter-spacing: 4px;
+    color: var(--muted);
+    text-transform: uppercase;
+}
+
+.footer-col h5 {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+.footer-col p {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-bottom: 0.7rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-col i {
+    color: var(--gold);
+    width: 16px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-subtle);
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 2px;
+}
+
+/* ============================================
+   ANIMAÇÕES
+   ============================================ */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+    40% { transform: translateX(-50%) translateY(-10px); }
+    60% { transform: translateX(-50%) translateY(-5px); }
+}
+
+/* ============================================
+   RESPONSIVIDADE
+   ============================================ */
+@media (max-width: 968px) {
+    .vitrine-grid,
+    .servicos-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero-titulo {
+        font-size: 4rem;
+        letter-spacing: 12px;
+    }
+
+    .secao-titulo {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 350px;
+        height: 100vh;
+        background: var(--dark-velvet);
+        flex-direction: column;
+        justify-content: center;
+        gap: 2.5rem;
+        transition: right 0.4s ease;
+        border-left: 1px solid var(--border-subtle);
+        z-index: 999;
+    }
+
+    .nav-links.open {
+        right: 0;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+
+    .hero-titulo {
+        font-size: 3rem;
+        letter-spacing: 8px;
+    }
+
+    .hero-frase {
+        font-size: 1.1rem;
+    }
+
+    section {
+        padding: 5rem 0;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
